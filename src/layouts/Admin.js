@@ -1,21 +1,3 @@
-/*!
-
-=========================================================
-* Paper Dashboard React - v1.3.2
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/paper-dashboard-react
-* Copyright 2023 Creative Tim (https://www.creative-tim.com)
-
-* Licensed under MIT (https://github.com/creativetimofficial/paper-dashboard-react/blob/main/LICENSE.md)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
 import React from "react";
 // javascript plugin used to create scrollbars on windows
 import PerfectScrollbar from "perfect-scrollbar";
@@ -28,13 +10,14 @@ import FixedPlugin from "components/FixedPlugin/FixedPlugin.js";
 
 import routes from "routes.js";
 
-var ps;
+let ps;
 
 function Dashboard(props) {
   const [backgroundColor, setBackgroundColor] = React.useState("black");
   const [activeColor, setActiveColor] = React.useState("info");
   const mainPanel = React.useRef();
   const location = useLocation();
+
   React.useEffect(() => {
     if (navigator.platform.indexOf("Win") > -1) {
       ps = new PerfectScrollbar(mainPanel.current);
@@ -47,6 +30,7 @@ function Dashboard(props) {
       }
     };
   });
+
   React.useEffect(() => {
     mainPanel.current.scrollTop = 0;
     document.scrollingElement.scrollTop = 0;
